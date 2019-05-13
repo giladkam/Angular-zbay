@@ -1,0 +1,46 @@
+<div class="side-menu">
+  <div class="filter-wrapper">
+    <ul class="filter-wrapper_list">
+        <div class="filter-wrapper_title">Categories:</div>
+        <li 
+          class="filter-wrapper_option filter-wrapper_option--hover"
+          [routerLinkActive]="['filter-wrapper_option--active']"
+          [routerLinkActiveOptions]="{exact: true}"
+         >
+            <a class="filter-wrapper_link" routerLink="/products">All</a> 
+        </li>
+      <li class="filter-wrapper_option filter-wrapper_option--hover" *ngFor="let category of categories" [routerLinkActive]="['filter-wrapper_option--active']">
+          <a class="filter-wrapper_link" routerLink="/products/{{category}}">{{category | titlecase}}</a> 
+      </li>
+    </ul>
+  </div>
+    <div class="filter-wrapper">
+      <div class="filter-wrapper_title">Filter by price:</div>
+      <div class="filter-wrapper_option">
+        <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="1"
+        min="1"
+        max="100"
+        [value]="maxPrice"
+        (change)='onChangePrice($event)'
+        >
+        >
+      </mat-slider>
+      </div>
+    </div>
+    <div class="filter-wrapper">
+      <ul class="filter-wrapper_title">Filter by location:</ul>
+      <li 
+      class="filter-wrapper_option filter-wrapper_option--hover" 
+      [ngClass]="{'filter-wrapper_option--active':currentLocation === 'All'}"
+      (click)="onClickLocation()">All</li>
+        <li 
+        class="filter-wrapper_option filter-wrapper_option--hover" 
+        [ngClass]="{'filter-wrapper_option--active':currentLocation === location}"
+        *ngFor="let location of locations" 
+        (click)="onClickLocation(location)">{{location | titlecase}}
+      </li>
+    </div>
+</div>

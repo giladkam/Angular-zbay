@@ -1,0 +1,13 @@
+.products-list {
+    list-style: none;
+    padding: 0 2vw;
+    &_item {
+        vertical-align: top;
+        display: inline-block;
+        margin-right: 2vw;
+        margin-bottom: 1vw;
+        &:nth-child(3) {
+            margin-right: 0;
+        }
+    }
+}

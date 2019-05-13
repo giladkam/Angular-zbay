@@ -1,0 +1,36 @@
+.product-container {
+    $border-radius: 4px;
+    background-color: #ffffff;
+    width: 98%;
+    margin: auto;
+    margin-top: 1%;
+    position: relative;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    .product-image {
+        width: 25vw;
+        vertical-align: top;
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+    .product-details {
+        display: inline-block;
+        width: 51vw;
+        margin-left: 2vw;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        line-height: 2vw;
+        &_title {
+            font-size: 2vw;
+        }
+        &_description {
+            font-size: 1.3vw;
+        }
+    }
+
+    &--small {
+       padding: 1% 0; 
+       line-height: 2vw;
+    }
+}

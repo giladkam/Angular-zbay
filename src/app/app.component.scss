@@ -1,0 +1,28 @@
+.app-header {
+    $header-padding-left: 2vw;
+    color: #ff4081;
+    background-color: #b3d2ec;
+    font-weight: 500;
+    padding-left: $header-padding-left;
+    position: relative;
+    &_title {
+    font-size: 4vw;
+        &--small {
+            font-size: 0.9vw;
+        }
+    }
+    &_icon {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3vw;
+        height: 3vw;
+        width: 3vw;
+        right: 2vw;
+        outline: none;
+        &--farther{
+            right: 6vw;
+        }
+    }
+}

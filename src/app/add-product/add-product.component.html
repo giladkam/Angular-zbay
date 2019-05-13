@@ -1,0 +1,20 @@
+<mat-card class='add-product-container'>
+  <form [formGroup]="addProductrForm" (ngSubmit)="onSubmit()" class="add-product-form">
+    <div class="field-wrapper" *ngFor="let item of f | keyvalue">
+      <mat-form-field class="add-product-form_field">
+          <input matInput
+          placeholder="{{ item.key | titlecase }}"
+          type="text"
+          [formControlName]=item.key 
+          required
+          >
+        </mat-form-field>
+        <div class="add-product-form_error-feedback">
+          <mat-error *ngIf="submitted && item.value.errors">{{item.key}} is required</mat-error>
+          <mat-error *ngIf="submitted && item.value.errors && item.value.errors.pattern">This field must contain only numbers!</mat-error>
+          <mat-error *ngIf="submitted && item.value.errors && item.value.errors.max">The maximum price is 100$</mat-error>
+        </div>
+      </div>
+    <button mat-fab class="add-product-form_submit">Add</button>
+  </form>
+</mat-card>

@@ -1,0 +1,16 @@
+.add-product-container {
+    width: 40vw;
+    margin: 2vw auto;
+}
+.add-product-form {
+    &_field {
+        width: 100%;;
+    }
+    &_submit {
+        margin: auto;
+        display: block;
+    }
+    &_error-feedback {
+        font-size: 13px;
+    }
+}
